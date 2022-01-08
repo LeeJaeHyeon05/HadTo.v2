@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/menu_cale"
+        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/menu_timer"
+        android:icon="@drawable/ic_baseline_format_list_numbered_24"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/menu_til"
+        android:icon="@drawable/ic_baseline_insert_drive_file_24"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/menu_market"
+        android:icon="@drawable/ic_baseline_storefront_24"
+        android:title="홈"/>
+
+</menu>
