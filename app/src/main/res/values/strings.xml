@@ -3,7 +3,15 @@
     <string name="restText">휴식</string>
     <string name="cancelText">취소</string>
     <string name="startText">시작</string>
-    
+
     <string name="timerNumCode">%1$02d:%2$02d:%3$02d</string>
     <string name="timerZeroText">00:00:00</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="timerTapText">타이머</string>
+    <string name="graphTapText">그래프</string>
+    <string name="treeTapText">나무</string>
+
+
 </resources>
