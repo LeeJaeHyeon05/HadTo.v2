@@ -5,8 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.hadto.R
 import com.example.hadto.databinding.FragmentTimerBinding
+import com.example.hadto.timerTapbar.GraphFragment
+import com.example.hadto.timerTapbar.MyPagerAdapter
+import com.example.hadto.timerTapbar.TreeFragment
+import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.fragment_timer.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.concurrent.timer
@@ -20,7 +26,6 @@ class TimerFragment: Fragment() {
             return TimerFragment()
         }
     }
-
     //뷰바인딩
     private var mBinding: FragmentTimerBinding? = null
     private val binding get() = mBinding!!
@@ -37,6 +42,10 @@ class TimerFragment: Fragment() {
     ): View {
         mBinding = FragmentTimerBinding.inflate(inflater, container, false)
 
+        val fragmentAdapter = MyPagerAdapter(requireActivity().supportFragmentManager)
+        binding.viewpagerMain.adapter = fragmentAdapter
+
+        binding.tabsMain.setupWithViewPager(viewpager_main)
 
         //현재 날짜 보여주기
         val currentTime : Long = System.currentTimeMillis()
@@ -49,7 +58,7 @@ class TimerFragment: Fragment() {
             binding.startBtn.setOnClickListener(null)
         }
         //휴식 버튼
-        binding.restBtn.setOnClickListener {
+        binding.stopBtn.setOnClickListener {
             stopTimer()
         }
         //캔슬(리셋) 버튼

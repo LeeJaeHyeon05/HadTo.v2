@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.example.hadto.R
 
 
-class graphFragment : Fragment() {
-
+class TreeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,7 +17,6 @@ class graphFragment : Fragment() {
 
 
 
-        return inflater.inflate(R.layout.fragment_graph, container, false)
+        return inflater.inflate(R.layout.fragment_tree, container, false)
     }
-
 }
