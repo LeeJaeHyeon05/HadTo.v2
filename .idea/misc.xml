@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/ic_baseline_format_list_numbered_24.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/ic_baseline_insert_drive_file_24.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/round_bg.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/layout/activity_splash.xml" value="0.22813688212927757" />
