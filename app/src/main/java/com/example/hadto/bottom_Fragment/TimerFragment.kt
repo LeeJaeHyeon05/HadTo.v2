@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.hadto.R
 import com.example.hadto.databinding.FragmentTimerBinding
-import com.example.hadto.timerTapbar.GraphFragment
-import com.example.hadto.timerTapbar.MyPagerAdapter
-import com.example.hadto.timerTapbar.TreeFragment
-import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.fragment_timer.*
+import com.example.hadto.timerTapbar.tabGraphFragment
+import com.example.hadto.timerTapbar.tabTimerFragment
+import com.google.android.material.tabs.TabLayoutMediator
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.concurrent.timer
@@ -30,9 +28,6 @@ class TimerFragment: Fragment() {
     private var mBinding: FragmentTimerBinding? = null
     private val binding get() = mBinding!!
 
-    //타이머 코드
-    private var time = 0
-    private var timerTask : Timer? = null
 
     //프레그먼트와 레이아웃 연결
     override fun onCreateView(
@@ -42,57 +37,42 @@ class TimerFragment: Fragment() {
     ): View {
         mBinding = FragmentTimerBinding.inflate(inflater, container, false)
 
-        val fragmentAdapter = MyPagerAdapter(requireActivity().supportFragmentManager)
-        binding.viewpagerMain.adapter = fragmentAdapter
 
-        binding.tabsMain.setupWithViewPager(viewpager_main)
+        val timerFragment = tabTimerFragment()
+        val graphFragment = tabGraphFragment()
+
+        val fragments = arrayListOf<Fragment>(timerFragment, graphFragment)
+
+
+        val tabAdapter = object : FragmentStateAdapter(this) {
+            override fun getItemCount(): Int {
+                return fragments.size
+            }
+
+            override fun createFragment(position: Int): Fragment {
+                return fragments[position]
+            }
+
+        }
+
+        binding.viewPager2.adapter = tabAdapter
+
+        TabLayoutMediator(binding.tabsMain, binding.viewPager2) {tab, position ->
+            when(position) {
+                0 -> tab.setText(R.string.timerTapText)
+                else -> tab.setText(R.string.graphTapText)
+            }
+        }.attach()
+
 
         //현재 날짜 보여주기
         val currentTime : Long = System.currentTimeMillis()
         val dataFormat = SimpleDateFormat("yyyy-MM-dd")
         binding.dateText.text = dataFormat.format(currentTime)
 
-        //스타트 버튼
-        binding.startBtn.setOnClickListener {
-            startTimer()
-            binding.startBtn.setOnClickListener(null)
-        }
-        //휴식 버튼
-        binding.stopBtn.setOnClickListener {
-            stopTimer()
-        }
-        //캔슬(리셋) 버튼
-        binding.cancelBtn.setOnClickListener {
-            resetTimer()
-        }
 
         return binding.root
     }
-
-
-    private fun startTimer() {
-        timerTask = timer(period = 20) {
-            time ++
-
-            val hour = time / 3600 / 60
-            val min = time / 3600
-            val sec = (time % 3600) / 60
-
-            activity?.runOnUiThread {
-                binding.timerNum.text = "%1$02d:%2$02d:%3$02d".format(hour, min, sec)
-            }
-        }
-    }
-    private fun stopTimer() {
-        timerTask?.cancel()
-    }
-    private fun resetTimer() {
-        timerTask?.cancel()
-        time = 0
-        binding.timerNum.text = R.string.timerZeroText.toString()
-    }
-
-
 
     override fun onDestroy() {
         mBinding = null

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">HadTo</string>
     <string name="restText">휴식</string>
-    <string name="cancelText">취소</string>
+    <string name="cancelText">취소/끝</string>
     <string name="startText">시작</string>
 
     <string name="timerNumCode">%1$02d:%2$02d:%3$02d</string>
