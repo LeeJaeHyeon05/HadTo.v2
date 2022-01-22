@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/CHANG SEO HYUN/HadTo.v2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13958333333333334" />
+        <entry key="..\:/Users/CHANG SEO HYUN/HadTo.v2/app/src/main/res/drawable/login_button.xml" value="0.1375" />
+        <entry key="..\:/Users/CHANG SEO HYUN/HadTo.v2/app/src/main/res/drawable/round_bg.xml" value="0.1375" />
+        <entry key="..\:/Users/CHANG SEO HYUN/HadTo.v2/app/src/main/res/layout/activity_intro.xml" value="0.264" />
+        <entry key="..\:/Users/CHANG SEO HYUN/HadTo.v2/app/src/main/res/layout/activity_splash.xml" value="0.12" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/ic_baseline_format_list_numbered_24.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/HadTo3/app/src/main/res/drawable/ic_baseline_insert_drive_file_24.xml" value="0.16944444444444445" />
