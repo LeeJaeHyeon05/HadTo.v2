@@ -3,7 +3,6 @@ package com.example.hadto
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hadto.bottom_Fragment.*
-import com.example.hadto.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
