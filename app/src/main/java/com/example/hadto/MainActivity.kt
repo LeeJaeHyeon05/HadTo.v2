@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var timerFragment: TimerFragment
     private lateinit var tilFragment: TilFragment
     private lateinit var marketFragment: MarketFragment
+    private lateinit var activity : MainActivity
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,3 +55,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
