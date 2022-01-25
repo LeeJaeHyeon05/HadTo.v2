@@ -12,6 +12,9 @@
     <string name="timerTapText">타이머</string>
     <string name="graphTapText">그래프</string>
     <string name="treeTapText">나무</string>
+    <string name="introMainHiText">Hi, 반갑습니다.</string>
+    <string name="select">이 중에 하나를 선택해주세요</string>
+
 
 
 </resources>
